@@ -1,0 +1,21 @@
+Source: python-gnupg-ng
+Maintainer: Ben Carrillo <ben@futeisha.org>
+Section: python
+Priority: optional
+Build-Depends: python-setuptools (>= 0.6b3), python-all (>= 2.6.6-3), debhelper (>= 7.4.3)
+XS-Python-Version: 2.7
+Standards-Version: 3.9.4
+Uploaders: Micah Anderson <micah@debian.org>
+Homepage: https://github.com/isislovecruft/python-gnupg
+
+Package: python-gnupg-ng
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, python-psutil (>= 0.5.1), python-setuptools (>= 0.6.45)
+Conflicts: python-gnupg
+XB-Python-Version: ${python:Versions}
+Replaces: python-gnupg
+Provides: ${python:Provides}, python-gnupg
+Description: A Python wrapper for GnuPG
+ This module allows easy access to GnuPG's key management, encryption and signature functionality from Python programs, by interacting with GnuPG through file descriptors. Input arguments are strictly checked and sanitised, and therefore this module should be safe to use in networked applications requiring direct user input. It is intended for use with Python 2.6 or greater.
+ .
+ python-gnupg-ng is a temporary "fork" of python-gnupg.
