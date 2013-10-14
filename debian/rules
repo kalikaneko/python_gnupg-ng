@@ -1,28 +1,35 @@
 #!/usr/bin/make -f
 
 # Uncomment this to turn on verbose mode.
-#DH_VERBOSE=1
-package=bitmask
+DH_VERBOSE=1
+
+package=python-gnupg-ng
 
 PYTHON2=$(shell pyversions -vr)
+
 %:
-	dh $@ --with python2 --buildsystem=python_distutils
+	dh $@ --with python2,python3,sphinxdoc --buildsystem=python_distutils
 
 build-python%:
 	python$* setup.py build
 
-#override_dh_auto_build: $(PYTHON3:%=build-python%)
-#        dh_auto_build
-
 install-python%:
 	python$* setup.py install --root=$(CURDIR)/debian/tmp --install-layout=deb
 
-#override_dh_installdocs:
-#	python setup.py build_sphinx
-#	dh_installdocs
+override_dh_compress:
+	dh_compress -i -X.rst -X.js -X.html -X.txt
+
+override_dh_auto_build:
+	#python$* setup.py build_sphinx
+	python$* setup.py build_sphinx
+	dh_auto_build
+	#python$* setup.py build_sphinx
+
+#override_dh_auto_build: $(PYTHON3:%=build-python%)
+#        dh_auto_build
 
 override_dh_auto_clean:
-	dh_auto_clean
-	rm -rf build
-	rm -rf debian/docs
-	rm -rf docs/_build 
+	#dh_auto_clean
+	#rm -rf build debian/docs docs/_build *.egg-info
+	#find \( -name '._*' -o -name '*.pyc' \) -delete
+	echo "pass"
