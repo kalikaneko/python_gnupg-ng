@@ -3,7 +3,8 @@ Maintainer: Ben Carrillo <ben@futeisha.org>
 Section: python
 Priority: optional
 Build-Depends: python-setuptools (>= 0.6b3), python-all (>= 2.6.6-3), debhelper (>= 7.4.3)
-XS-Python-Version: 2.7
+X-Python-Version: >= 2.6
+X-Python3-Version: >= 3.0
 Standards-Version: 3.9.4
 Uploaders: Micah Anderson <micah@debian.org>
 Homepage: https://github.com/isislovecruft/python-gnupg
@@ -18,7 +19,19 @@ Provides: ${python:Provides}, python-gnupg
 Description: A Python wrapper for GnuPG
  This module allows easy access to GnuPG's key management, encryption and signature functionality from Python programs, by interacting with GnuPG through file descriptors. Input arguments are strictly checked and sanitised, and therefore this module should be safe to use in networked applications requiring direct user input. It is intended for use with Python 2.6 or greater.
  .
- python-gnupg-ng is a temporary "fork" of python-gnupg.
+ python-gnupg-ng is a temporary "fork" of python-gnupg used, among others, by the LEAP project.
+ 
+Package: python3-gnupg-ng
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, python3-psutil (>= 0.5.1), python3-setuptools (>= 0.6.45)
+Conflicts: python3-gnupg
+XB-Python-Version: ${python3:Versions}
+Replaces: python3-gnupg
+Provides: ${python:Provides}, python3-gnupg
+Description: A Python wrapper for GnuPG (Python3)
+ This module allows easy access to GnuPG's key management, encryption and signature functionality from Python programs, by interacting with GnuPG through file descriptors. Input arguments are strictly checked and sanitised, and therefore this module should be safe to use in networked applications requiring direct user input. It is intended for use with Python 2.6 or greater.
+ .
+ python3-gnupg-ng is a temporary "fork" of python3-gnupg used, among others, by the LEAP project. This package contains the Python 3 version.
 
 Package: python-gnupg-ng-doc
 Section: doc

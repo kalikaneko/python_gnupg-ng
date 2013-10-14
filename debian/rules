@@ -1,35 +1,40 @@
 #!/usr/bin/make -f
 
 # Uncomment this to turn on verbose mode.
-DH_VERBOSE=1
+# export DH_VERBOSE=1
 
 package=python-gnupg-ng
 
-PYTHON2=$(shell pyversions -vr)
+PYVERS=$(shell pyversions -r)
+PY3VERS = $(shell py3versions -r)
 
 %:
 	dh $@ --with python2,python3,sphinxdoc --buildsystem=python_distutils
-
-build-python%:
-	python$* setup.py build
-
-install-python%:
-	python$* setup.py install --root=$(CURDIR)/debian/tmp --install-layout=deb
 
 override_dh_compress:
 	dh_compress -i -X.rst -X.js -X.html -X.txt
 
 override_dh_auto_build:
-	#python$* setup.py build_sphinx
 	python$* setup.py build_sphinx
-	dh_auto_build
-	#python$* setup.py build_sphinx
-
-#override_dh_auto_build: $(PYTHON3:%=build-python%)
-#        dh_auto_build
+	set -ex; \
+	for python in $(PYVERS) $(PY3VERS); do \
+		$$python setup.py build; \
+	done
 
 override_dh_auto_clean:
-	#dh_auto_clean
-	#rm -rf build debian/docs docs/_build *.egg-info
-	#find \( -name '._*' -o -name '*.pyc' \) -delete
-	echo "pass"
+	dh_auto_clean
+	rm -rf build debian/docs docs/_build *.egg-info
+	find \( -name '._*' -o -name '*.pyc' \) -delete
+
+override_dh_auto_install:
+	set -ex; \
+	for python in $(PYVERS); do \
+		$$python setup.py install --skip-build --root debian/$(package) \
+			--install-layout deb; \
+	done
+
+	set -ex; \
+	for python in $(PY3VERS); do \
+		$$python setup.py install --skip-build --root debian/$(package) \
+			--install-layout deb; \
+	done
