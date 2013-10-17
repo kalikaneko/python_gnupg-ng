@@ -24,7 +24,8 @@ Description: Python wrapper for GnuPG
  safe to use in networked applications requiring direct user input. It
  is intended for use with Python 2.6 or greater.
  .
- python-gnupg-ng is a temporary "fork" of python-gnupg used, among others, by the LEAP project.
+ python-gnupg-ng is a temporary "fork" of python-gnupg used, among 
+ others, by the LEAP project.
  
 Package: python3-gnupg-ng
 Architecture: all
@@ -41,7 +42,8 @@ Description: Python wrapper for GnuPG (Python3)
  safe to use in networked applications requiring direct user input. It
  is intended for use with Python 2.6 or greater.
  .
- python3-gnupg-ng is a temporary "fork" of python3-gnupg used, among others, by the LEAP project. This package contains the Python 3 version.
+ python3-gnupg-ng is a temporary "fork" of python3-gnupg used, among 
+ others, by the LEAP project. This package contains the Python 3 version.
 
 Package: python-gnupg-ng-doc
 Section: doc
@@ -54,6 +56,5 @@ Description: Python wrapper for GnuPG
  strictly checked and sanitised, and therefore this module should be 
  safe to use in networked applications requiring direct user input. It 
  is intended for use with Python 2.6 or greater.
->>>>>>> 7b31271... article description part ii
  .
  This package contains the documentation.
