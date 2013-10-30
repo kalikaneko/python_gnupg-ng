@@ -18,7 +18,7 @@ Replaces: python-gnupg
 Provides: ${python:Provides}, python-gnupg
 Description: Python wrapper for GnuPG
  A Python interface for handling interactions with GnuPG, including keyfile
- generation, keyring maintainance, import and export, encryption and decryption,
+ generation, keyring maintenance, import and export, encryption and decryption,
  sending to and recieving from keyservers, and signing and verification.
  .
  This is a fork of python-gnupg (from version 0.3.2), patched to sanitize
@@ -36,14 +36,15 @@ Replaces: python3-gnupg
 Provides: ${python:Provides}, python3-gnupg
 Description: Python wrapper for GnuPG (Python3)
  A Python interface for handling interactions with GnuPG, including keyfile
- generation, keyring maintainance, import and export, encryption and decryption,
+ generation, keyring maintenance, import and export, encryption and decryption,
  sending to and recieving from keyservers, and signing and verification.
  .
  This is a fork of python-gnupg (from version 0.3.2), patched to sanitize
  untrusted inputs, due to the necessity of executing subprocess.Popen([...],
- shell=True) in order to communicate with GnuPG. Several speed improvements were
- also made based on code profiling, and the API has been cleaned up to support
- an easier, more Pythonic, interaction. This package contains the Python 3 version.
+ shell=True) in order to communicate with GnuPG. Several speed improvements
+ were also made based on code profiling, and the API has been cleaned up to
+ support an easier, more Pythonic, interaction. This package contains the
+ Python 3 version.  
 
 Package: python-gnupg-ng-doc
 Section: doc
@@ -51,7 +52,7 @@ Architecture: all
 Depends: ${misc:Depends}, ${sphinxdoc:Depends}
 Description: Python wrapper for GnuPG
  A Python interface for handling interactions with GnuPG, including keyfile
- generation, keyring maintainance, import and export, encryption and decryption,
+ generation, keyring maintenance, import and export, encryption and decryption,
  sending to and recieving from keyservers, and signing and verification.
  .
  This package contains the documentation.
