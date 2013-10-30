@@ -11,7 +11,8 @@ Homepage: https://github.com/isislovecruft/python-gnupg
 
 Package: python-gnupg-ng
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}, python-psutil (>= 0.5.1), python-setuptools (>= 0.6.45)
+Depends: ${misc:Depends}, ${python:Depends},
+ python-psutil (>= 0.5.1), python-setuptools (>= 0.6.45), gnupg
 Conflicts: python-gnupg
 XB-Python-Version: ${python:Versions}
 Replaces: python-gnupg
@@ -29,7 +30,8 @@ Description: Python wrapper for GnuPG
  
 Package: python3-gnupg-ng
 Architecture: all
-Depends: ${misc:Depends}, ${python3:Depends}, python3-psutil (>= 0.5.1), python3-setuptools (>= 0.6.45)
+Depends: ${misc:Depends}, ${python3:Depends},
+ python3-psutil (>= 0.5.1), python3-setuptools (>= 0.6.45), gnupg
 Conflicts: python3-gnupg
 XB-Python-Version: ${python3:Versions}
 Replaces: python3-gnupg
