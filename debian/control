@@ -15,7 +15,7 @@ Homepage: https://github.com/isislovecruft/python-gnupg
 Package: python-gnupg-ng
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends},
- python-psutil (>= 0.5.1), python-setuptools (>= 0.6.45), gnupg
+ python-psutil (>= 0.5.1), python-setuptools (>= 0.6.24), gnupg
 Conflicts: python-gnupg
 XB-Python-Version: ${python:Versions}
 Replaces: python-gnupg
