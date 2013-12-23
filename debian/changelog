@@ -1,3 +1,9 @@
+python-gnupg-ng (1.2.5) UNRELEASED; urgency=low
+
+  * Update to 1.2.5 release
+
+ -- Ben Carrillo <ben@futeisha.org>  Mon, 23 Dec 2013 02:43:53 -0400
+
 python-gnupg-ng (1.2.4) unstable; urgency=medium
 
   * Fix python-setuputils Dependency version
