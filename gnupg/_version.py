@@ -5,7 +5,7 @@
 # unpacked source archive. Distribution tarballs contain a pre-generated copy
 # of this file.
 
-version_version = '1.2.3'
+version_version = '1.2.5'
 version_full = 'unknown'
 
 
