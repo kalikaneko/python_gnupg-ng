@@ -1,3 +1,9 @@
+python-gnupg-ng (1.2.5.1) unstable; urgency=medium
+
+  * Fix wheezy builds.
+
+ -- Ben Carrillo <ben@futeisha.org>  Fri, 27 Jun 2014 18:35:01 -0500
+
 python-gnupg-ng (1.2.5) unstable; urgency=low
 
   * Update to 1.2.5 release
